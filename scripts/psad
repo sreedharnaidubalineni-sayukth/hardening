@@ -41,4 +41,8 @@ function f_psad {
   fi
 
   ((SCRIPT_COUNT++))
+
+    for admin in $FW_ADMIN; do
+      echo "$admin" 0\; >> /etc/psad/auto_dl
+    done
 }

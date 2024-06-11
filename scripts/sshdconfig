@@ -68,9 +68,9 @@ function f_sshdconfig {
   fi
 
   if ! grep -q "^MaxAuthTries" "$SSHDCONF" 2> /dev/null; then
-    echo "MaxAuthTries 3" >> "$SSHDCONF"
+    echo "MaxAuthTries 5" >> "$SSHDCONF"
   else
-    sed -i 's/MaxAuthTries.*/MaxAuthTries 10/' "$SSHDCONF"
+    sed -i 's/MaxAuthTries.*/MaxAuthTries 5/' "$SSHDCONF"
   fi
 
   if ! grep -q "^ClientAliveInterval" "$SSHDCONF" 2> /dev/null; then
@@ -98,9 +98,9 @@ function f_sshdconfig {
   fi
 
   if ! grep -q "^MaxSessions" "$SSHDCONF" 2> /dev/null; then
-    echo "MaxSessions 5" >> "$SSHDCONF"
+    echo "MaxSessions 10" >> "$SSHDCONF"
   else
-    sed -i 's/MaxSessions.*/MaxSessions 3/' "$SSHDCONF"
+    sed -i 's/MaxSessions.*/MaxSessions 10/' "$SSHDCONF"
   fi
 
   if ! grep -q "^UseDNS" "$SSHDCONF" 2> /dev/null; then

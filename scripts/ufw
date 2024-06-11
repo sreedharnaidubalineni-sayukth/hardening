@@ -37,7 +37,10 @@ function f_firewall {
 
   for admin in $FW_ADMIN; do
     ufw allow log from "$admin" to any port "$SSH_PORT" proto tcp
+    iptables -A INPUT -p tcp -s "$admin" --dport "$SSH_PORT" -j ACCEPT
   done
+
+
 
   ufw default deny incoming
 

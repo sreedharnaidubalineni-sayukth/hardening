@@ -180,7 +180,7 @@ function main {
   f_aptget_noexec
   f_aptget_clean
   f_systemddelta
-  f_post
+  #f_post
   f_checkreboot
 
   echo

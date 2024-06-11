@@ -35,9 +35,9 @@ function f_aptget_configure {
   fi
 
   if ! grep '^APT::Get::AllowUnauthenticated' /etc/apt/apt.conf.d/* ; then
-    echo 'APT::Get::AllowUnauthenticated "false";' >> /etc/apt/apt.conf.d/98-hardening-ubuntu
+    echo 'APT::Get::AllowUnauthenticated "true";' >> /etc/apt/apt.conf.d/98-hardening-ubuntu
   else
-    sed -i 's/.*APT::Get::AllowUnauthenticated.*/APT::Get::AllowUnauthenticated "false";/g' "$(grep -l 'APT::Get::AllowUnauthenticated' /etc/apt/apt.conf.d/*)"
+    sed -i 's/.*APT::Get::AllowUnauthenticated.*/APT::Get::AllowUnauthenticated "true";/g' "$(grep -l 'APT::Get::AllowUnauthenticated' /etc/apt/apt.conf.d/*)"
   fi
 
   if ! grep '^APT::Periodic::AutocleanInterval' /etc/apt/apt.conf.d/*; then
@@ -77,15 +77,15 @@ function f_aptget_configure {
   fi
 
   if ! grep '^Acquire::AllowDowngradeToInsecureRepositories' /etc/apt/apt.conf.d/*; then
-    echo 'Acquire::AllowDowngradeToInsecureRepositories "false";' >> /etc/apt/apt.conf.d/98-hardening-ubuntu
+    echo 'Acquire::AllowDowngradeToInsecureRepositories "true";' >> /etc/apt/apt.conf.d/98-hardening-ubuntu
   else
-    sed -i 's/.*Acquire::AllowDowngradeToInsecureRepositories.*/Acquire::AllowDowngradeToInsecureRepositories "false";/g' "$(grep -l 'Acquire::AllowDowngradeToInsecureRepositories' /etc/apt/apt.conf.d/*)"
+    sed -i 's/.*Acquire::AllowDowngradeToInsecureRepositories.*/Acquire::AllowDowngradeToInsecureRepositories "true";/g' "$(grep -l 'Acquire::AllowDowngradeToInsecureRepositories' /etc/apt/apt.conf.d/*)"
   fi
 
   if ! grep '^Acquire::AllowInsecureRepositories' /etc/apt/apt.conf.d/*; then
-    echo 'Acquire::AllowInsecureRepositories "false";' >> /etc/apt/apt.conf.d/98-hardening-ubuntu
+    echo 'Acquire::AllowInsecureRepositories "true";' >> /etc/apt/apt.conf.d/98-hardening-ubuntu
   else
-    sed -i 's/.*Acquire::AllowInsecureRepositories.*/Acquire::AllowInsecureRepositories "false";/g' "$(grep -l 'Acquire::AllowInsecureRepositories' /etc/apt/apt.conf.d/*)"
+    sed -i 's/.*Acquire::AllowInsecureRepositories.*/Acquire::AllowInsecureRepositories "true";/g' "$(grep -l 'Acquire::AllowInsecureRepositories' /etc/apt/apt.conf.d/*)"
   fi
 
   if ! grep '^APT::Sandbox::Seccomp' /etc/apt/apt.conf.d/*; then

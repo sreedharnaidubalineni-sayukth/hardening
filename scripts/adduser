@@ -8,10 +8,13 @@ function f_adduser {
 
   sed -i 's/^SHELL=.*/SHELL=\/bin\/false/' "$USERADD"
   sed -i 's/^# INACTIVE=.*/INACTIVE=30/' "$USERADD"
+  # The number of days after a password expires until the account is permanently disabled
 
+  ## change exisiting user home directory permissions to 0750
   awk -F ':' '{if($3 >= 1000 && $3 <= 65000) print $6}' /etc/passwd | while read -r userhome; do
     chmod 0750 "$userhome"
   done
 
+  
   ((SCRIPT_COUNT++))
 }

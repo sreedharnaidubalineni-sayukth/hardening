@@ -3,7 +3,7 @@ function f_disablenet {
 
   local NET
   #NET="dccp sctp rds tipc"
-  NET="rds"
+  NET=""
   for disable in $NET; do
     if ! grep -q "$disable" "$DISABLENET" 2> /dev/null; then
       echo "install $disable /bin/true" >> "$DISABLENET"

@@ -39,6 +39,9 @@ function main {
   WBIN="$(command -v w)"
   LXC="0"
 
+
+# getting the ip from the dns servers and i.e 10.20.0.0
+# ip route get 10.20.0.0
   if resolvectl status >/dev/null 2>&1; then
     SERVERIP="$(ip route get "$(resolvectl status |\
       grep -E 'DNS (Server:|Servers:)' | tail -n1 |\
@@ -62,6 +65,8 @@ function main {
     else
       ADMINIP="$(hostname -I | sed -E 's/\.[0-9]+ /.0\/24 /g')"
     fi
+
+# ADMINIP = 172.21.3.0/24 10.20.1.0/24
 
     sed -i "s/FW_ADMIN='/FW_ADMIN='$ADMINIP /" ./ubuntu.cfg
     sed -i "s/SSH_GRPS='/SSH_GRPS='$(id "$($WBIN -ih | awk '{print $1}' | head -n1)" -ng) /" ./ubuntu.cfg
@@ -131,7 +136,7 @@ function main {
   f_pre
   f_kernel
   f_firewall
-  f_disablenet
+  #f_disablenet
   f_disablefs
   f_disablemod
   f_systemdconf

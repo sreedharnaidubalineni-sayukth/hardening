@@ -31,14 +31,12 @@ f_checkreboot
 ## jyothi
 f_disablefs
 f_timesyncd
-f_fstab
 f_prelink
 f_aptget_configure
 f_aptget
 f_limitsconf
 f_sshconfig
 f_sshdconfig
- f_aide
 f_rhosts
 f_path
 f_aa_enforce
@@ -58,5 +56,7 @@ f_coredump
 f_usbguard
 f_ctrlaltdel
 f_auditd
+f_fstab
 f_aide_post
 f_aide_timer
+ f_aide

@@ -4,10 +4,10 @@ function f_limitsconf {
   sed -i 's/^# End of file*//' "$LIMITSCONF"
   { echo '* hard maxlogins 10'
     echo '* hard core 0'
-    echo '* soft nproc 512'
-    echo '* hard nproc 1024'
-    echo '* soft nofile 1024'
-    echo  '* hard nofile 65536'
+    echo '* soft nproc 51200'
+    echo '* hard nproc 102400'
+    echo '* soft nofile 102400'
+    echo  '* hard nofile 6553600'
     echo '# End of file'
   } >> "$LIMITSCONF"
 

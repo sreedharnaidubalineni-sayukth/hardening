@@ -137,14 +137,14 @@ function main {
   f_kernel
   f_firewall
   f_disablenet
-  #f_disablefs
+  f_disablefs
   f_disablemod
   f_systemdconf
   f_resolvedconf
   f_logindconf
   f_journalctl
   f_timesyncd
-  #f_fstab
+  f_fstab
   f_prelink
   f_aptget_configure
   f_aptget
@@ -175,14 +175,14 @@ function main {
   f_users
   f_lockroot
   f_package_remove
-  #f_suid
+  f_suid
   f_restrictcompilers
-  #f_umask
+  f_umask
   f_path
   f_aa_enforce
   f_aide_post
   f_aide_timer
-  #f_aptget_noexec
+  f_aptget_noexec
   f_aptget_clean
   f_systemddelta
   f_post

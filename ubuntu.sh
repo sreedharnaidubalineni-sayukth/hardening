@@ -136,19 +136,19 @@ function main {
   f_pre
   f_kernel
   f_firewall
-  #f_disablenet
-  f_disablefs
+  f_disablenet
+  #f_disablefs
   f_disablemod
   f_systemdconf
   f_resolvedconf
   f_logindconf
   f_journalctl
   f_timesyncd
-  f_fstab
+  #f_fstab
   f_prelink
   f_aptget_configure
   f_aptget
-  #f_hosts
+  f_hosts
   f_issue
   f_sudo
   f_logindefs
@@ -182,12 +182,11 @@ function main {
   f_aa_enforce
   f_aide_post
   f_aide_timer
-  f_aptget_noexec
+  #f_aptget_noexec
   f_aptget_clean
   f_systemddelta
-  #f_post
+  f_post
   f_checkreboot
-
   echo
 }
 

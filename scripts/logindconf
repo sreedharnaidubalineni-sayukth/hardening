@@ -4,7 +4,7 @@ function f_logindconf {
   sed -i 's/^#KillUserProcesses=no/KillUserProcesses=1/' "$LOGINDCONF"
   sed -i 's/^#KillExcludeUsers=root/KillExcludeUsers=root/' "$LOGINDCONF"
   sed -i 's/^#IdleAction=ignore/IdleAction=lock/' "$LOGINDCONF"
-  sed -i 's/^#IdleActionSec=30min/IdleActionSec=15min/' "$LOGINDCONF"
+  sed -i 's/^#IdleActionSec=30min/IdleActionSec=5min/' "$LOGINDCONF"
   sed -i 's/^#RemoveIPC=yes/RemoveIPC=yes/' "$LOGINDCONF"
 
   systemctl daemon-reload

@@ -175,9 +175,9 @@ function main {
   f_users
   f_lockroot
   f_package_remove
-  f_suid
+  #f_suid
   f_restrictcompilers
-  f_umask
+  #f_umask
   f_path
   f_aa_enforce
   f_aide_post
